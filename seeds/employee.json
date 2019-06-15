@@ -1,0 +1,35 @@
+[
+  {
+    "model": "domain.employee",
+    "pk": 1,
+    "fields": {
+      "name": "Arnaldo Pereira",
+      "email": "arnaldo@luizalabs.com",
+      "department": 1,
+      "created_at": "2019-06-15T17:39:33.893Z",
+      "updated_at": "2019-06-15T17:39:33.893Z"
+    }
+  },
+  {
+    "model": "domain.employee",
+    "pk": 2,
+    "fields": {
+      "name": "Renato Pedigoni",
+      "email": "renato@luizalabs.com",
+      "department": 2,
+      "created_at": "2019-06-15T17:42:32.507Z",
+      "updated_at": "2019-06-15T17:42:32.507Z"
+    }
+  },
+  {
+    "model": "domain.employee",
+    "pk": 3,
+    "fields": {
+      "name": "Thiago Catoto",
+      "email": "catoto@luizalabs.com",
+      "department": 3,
+      "created_at": "2019-06-15T17:43:04.852Z",
+      "updated_at": "2019-06-15T17:43:04.853Z"
+    }
+  }
+]

@@ -1,0 +1,12 @@
+language: python
+dist: trusty
+python:
+  - '3.6.5'
+install:
+  - pip install -r requirements.txt
+  - python manage.py collectstatic
+env:
+  - DJANGO_SETTINGS_MODULE=app.settings.local
+script:
+  - python manage.py test
+  - flake8 domain app api --exclude=*/migrations,*settings

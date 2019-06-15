@@ -1,0 +1,29 @@
+[
+  {
+    "model": "domain.department",
+    "pk": 1,
+    "fields": {
+      "name": "Architecture",
+      "created_at": "2019-06-15T17:36:02.571Z",
+      "updated_at": "2019-06-15T17:36:02.571Z"
+    }
+  },
+  {
+    "model": "domain.department",
+    "pk": 2,
+    "fields": {
+      "name": "E-commerce",
+      "created_at": "2019-06-15T17:36:19.836Z",
+      "updated_at": "2019-06-15T17:36:19.836Z"
+    }
+  },
+  {
+    "model": "domain.department",
+    "pk": 3,
+    "fields": {
+      "name": "Mobile",
+      "created_at": "2019-06-15T17:36:37.176Z",
+      "updated_at": "2019-06-15T17:36:37.176Z"
+    }
+  }
+]

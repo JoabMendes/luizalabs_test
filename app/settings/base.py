@@ -30,6 +30,7 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 # Application definition
 
 INSTALLED_APPS = [
+    'suit',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -149,6 +150,8 @@ REST_FRAMEWORK = {
     )
 }
 
-# Google Re-captcha Key
+# Admin configuration
 
-# GR_CAPTCHA_SECRET_KEY = ''
+SUIT_CONFIG = {
+    'ADMIN_NAME': 'Luizalabs Employer Manager Admin'
+}

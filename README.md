@@ -53,11 +53,14 @@ npm run build
 # In another terminal windown run the npm hot reloader serve
 ./run_npm_dev.sh
 
+# This command  will open the browser automatically on localhost:8080, but
+# you should head to 127.0.0.1:8000 instead.
+
 ```
 
 ## Running tests
 
 ```sh
 Working on the project python environment, run:
-./manage test
+./test.sh
 ```
