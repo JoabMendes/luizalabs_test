@@ -4,19 +4,19 @@
 
 #### Index
 
-- [Introduction]()
-  - [Basic Requirements]()
-  - [Build]()
-  - [Running on dev]()
-  - [Testing]()
-- [Architecture]()
-  - [Domain view]()
-  - [Package view]()
-- [API]()
-  - [Employee Endpoints]()
-  - [Department Endpoints]()
-- [Frontend]()
-- [Considerations]()
+- [Introduction](https://github.com/JoabMendes/luizalabs_test#introduction)
+  - [Basic Requirements](https://github.com/JoabMendes/luizalabs_test#basic-requirements)
+  - [Build](https://github.com/JoabMendes/luizalabs_test#build)
+  - [Running on dev](https://github.com/JoabMendes/luizalabs_test#running-on-dev)
+  - [Testing](https://github.com/JoabMendes/luizalabs_test#running-tests)
+- [Architecture](https://github.com/JoabMendes/luizalabs_test#architecture)
+  - [Domain view](https://github.com/JoabMendes/luizalabs_test#domain-view)
+  - [Package view](https://github.com/JoabMendes/luizalabs_test#package-view)
+- [API](https://github.com/JoabMendes/luizalabs_test#api-endpoints)
+  - [Employee Endpoints](https://github.com/JoabMendes/luizalabs_test#employee-endpoints)
+  - [Department Endpoints](https://github.com/JoabMendes/luizalabs_test#department-endpoints)
+- [Frontend](https://github.com/JoabMendes/luizalabs_test#frontend)
+- [Considerations](https://github.com/JoabMendes/luizalabs_test#considerations)
 
 
 ## Introduction
@@ -167,7 +167,7 @@ The implemented API provides endpoints to manage the two domain entities
 
 ### Employee endpoints:
 
-#### GET /api/v1/employee/
+#### Listing employees
 
 Retrieves all existing employees entities in the database.
 It supports pagination if the enabled param is specified.
@@ -221,7 +221,7 @@ or empty:
 []
 ```
 
-#### GET /api/v1/employee/<id>
+#### Retrieving an employee
 
 Retrieves an employee by its id
 
@@ -245,7 +245,7 @@ Retrieves an employee by its id
 {"employee": ["Invalid pk \"10\" - object does not exist."]}
 ```
 
-#### POST /api/v1/employee/
+#### Creating an employee
 
 Creates a new employee instance based on the specified payload
 
@@ -283,7 +283,7 @@ id when creating an employee.
 {"email": ["This field must be unique."]}
 ```
 
-#### PUT /api/v1/employee/
+#### Updating an employee
 
 Updates an employee instanced based on the specified payload
 
@@ -321,7 +321,7 @@ id when updating an employee.
 {"email": ["This field must be unique."]}
 ```
 
-#### DELETE /api/v1/employee/
+#### Deleting an employee
 
 - **endpoint:** `/api/v1/employee/<id>`
 - **method:** `DELETE`
@@ -338,7 +338,7 @@ id when updating an employee.
 
 ### Department endpoints:
 
-#### GET /ap1/v1/department
+#### Listing departments
 
 Retrieves all existing department entities in the database.
 
@@ -396,3 +396,8 @@ Several improvements can be done this project and here are some of them:
   so the retrieved information is always de right active one.
 - Add pagination to the views when listings are done (Index.vue).
 - Add search and filters to the views with listings (Index.vue).
+
+An extra done for this challenge was the ability to edit employees from the
+frontend.
+
+For questions email me at `joabe.mdl@gmail.com`.
