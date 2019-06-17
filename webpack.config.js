@@ -5,7 +5,7 @@ var WriteFilePlugin = require('write-file-webpack-plugin');
 var TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
-    mode: process.env.DJANGO_SETTINGS_MODULE === 'production' ? process.env.DJANGO_SETTINGS_MODULE : 'development',
+    mode: process.env.DJANGO_SETTINGS_MODULE === 'app.settings.production' ? 'production' : 'development',
     entry: './src/main.js',
     output: {
         path: path.resolve(__dirname, './static'),
@@ -100,7 +100,7 @@ module.exports = {
     }
 };
 
-if (process.env.DJANGO_SETTINGS_MODULE === 'production') {
+if (process.env.DJANGO_SETTINGS_MODULE === 'app.settings.production') {
     module.exports.devtool = '#source-map'
     // http://vue-loader.vuejs.org/en/workflow/production.html
     module.exports.plugins = (module.exports.plugins || []).concat([
