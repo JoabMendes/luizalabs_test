@@ -2,7 +2,8 @@
 
 [![Build Status](https://travis-ci.com/JoabMendes/luizalabs_test.svg?token=YiXFcShY3q5wCAWymCUr&branch=master)](https://travis-ci.com/JoabMendes/luizalabs_test)
 [![badge](https://heroku-badge.herokuapp.com/?app=luizalabs-manager)](https://luizalabs-manager.herokuapp.com/)
-#### Index
+
+## Index
 
 - [Introduction](https://github.com/JoabMendes/luizalabs_test#introduction)
   - [Basic Requirements](https://github.com/JoabMendes/luizalabs_test#basic-requirements)
@@ -142,35 +143,41 @@ department entities of the application.
 
 As I'm using Django for this project, by default it proposes the use of a layered MVC architecture
 (Models, Views and Controllers - In Django they are called Models, Templates and Views instead). The models provide an
-interface for the application domain data in a Object oriented structure. As
-I created an API I don't use the Template layer and my Views implement the API logic and
+interface for the application domain data in an Object oriented structure. As
+I created an API, I don't use the Template layer and my Views implement the API logic and
 access to the endpoints: Here is a package diagram of this project:
 
 ![Package Diagram](https://i.imgur.com/SEcgMWm.png)
 
-Other packages and modules are present in the application but the diagram
-represent the main ones that execute the API flow:
+Other packages and modules are present in the source but the diagram
+represents the main ones that execute the API flow:
 
 The `app` package contains the the django settings and the wsgi module. It also has
-the `urls` module, which provides the system urls and loads the main template. It includes the `api.urls` instance loading the 
-api package endpoints into the main application. The `api.urls` module provides
-the REST API endpoints, loading the views from the `api.views` package.
-The `api.views` package has the two modules: `api.department_view` and the `api.employee_view`
-and they implement the REST api methods for the models, which are accessed from the `domain.models` module. 
+the `urls` module, which provides the system urls and loads the main template. 
+
+The `app.urls` includes the `api.urls` instance loading the 
+api package endpoints into the main application. 
+
+The `api.urls` module provides the REST API endpoints, 
+loading the views from the `api.views` package.
+
+The `api.views` package has the modules: `api.department_view` and
+the `api.employee_view` and they implement the REST api methods for
+the models, which are accessed from the `domain.models` module. 
 
 
 ## API Endpoints
 
-The implemented API provides endpoints to manage the two domain entities
- of this project in a REST format through the default HTTP methods and retuning
- json responses. The existing API endpoints are:
+The implemented API provides endpoints to manage the two existing domain
+entities (Department/Employee) in a REST format through the default
+HTTP methods and retuning json responses. The existing API endpoints are:
 
 ### Employee endpoints:
 
 #### Listing employees
 
-Retrieves all existing employees entities in the database.
-It supports pagination if the enabled param is specified.
+Retrieves all existing employees instances in the database.
+It supports pagination if the `pagination=1` param is specified.
 
 - **endpoint:** `/api/v1/employee/`
 - **method:** `GET`
@@ -285,7 +292,7 @@ id when creating an employee.
 
 #### Updating an employee
 
-Updates an employee instanced based on the specified payload
+Updates an employee instance based on the specified payload / id
 
 - **endpoint:** `/api/v1/employee/<id>`
 - **method:** `PUT`
@@ -312,7 +319,7 @@ id when updating an employee.
     "name": "Arnaldo Pereira Jr"
 }
 ```
-- **400 Responses**
+- **400 Responses:**
 ```py
 {"department": ["Invalid pk \"10\" - object does not exist."]}
 {"name": ["This field is required"]}
@@ -323,15 +330,14 @@ id when updating an employee.
 
 #### Deleting an employee
 
+Deletes an employee instance by the referenced id.
+
 - **endpoint:** `/api/v1/employee/<id>`
 - **method:** `DELETE`
 - **params:** `None`
-
-- **204 Response**
-
+- **204 Response:**
 ```No response body```
-
-- **400 Responses**
+- **400 Responses:**
 ```py
 {"employee": ["Invalid pk \"10\" - object does not exist."]}
 ```
@@ -365,14 +371,16 @@ Retrieves all existing department entities in the database.
 
 ## Frontend
 
-The frontend of this application is built using Vue.js as Single Page Application (SPA). The `/index.html`
-file is served at `/` as a Django TemplateView and it loads the Vue app configuration.
-It uses Webpack 4 to minimize the application and convert it to vanilla javascript
-in the `static/build.js` map. 
+The frontend of this application is built using Vue.js as Single Page
+Application (SPA). The `/index.html` file is served at `/` as a Django 
+TemplateView and it loads the Vue app configuration.
+It uses Webpack 4 to minimize the application and convert it to vanilla
+javascript in the `static/build.js` map. 
 
-The component library used is the [Bootstrap Vue](https://bootstrap-vue.js.org) which
-implements the Twitter Bootstrap directives as Vue components. Which speeds the
-frontend development. The Vue components of this project are hosted in the src package:
+The component library used is the [Bootstrap Vue](https://bootstrap-vue.js.org),
+which implements the Twitter Bootstrap directives as Vue components, speeding
+the frontend development. The Vue components of this project are hosted in 
+the `src` package:
 
 ```
 src/
@@ -389,15 +397,20 @@ src/
 
 Several improvements can be done this project and here are some of them:
 
-- A login page and allow access to application only by authenticated users.
-- Soft delete, currently the when an instance is deleted it will be erased permanently from the database.
+- A login page and only allow the access to the application by authenticated users.
+- Soft delete: currently when an instance is deleted it will be erased permanently from the database.
   Soft delete makes possible to recover the information from a inactive domain instance.
-- With soft delete enable, defining the active scope of de domain entities is also importante,
-  so the retrieved information is always de right active one.
-- Add pagination to the views when listings are done (Index.vue).
+- With soft delete enabled, defining the active scope of de domain entities is also important,
+  so the retrieved information is always active.
+- Add pagination to the views with listings (Index.vue).
 - Add search and filters to the views with listings (Index.vue).
 
-An extra done for this challenge was the ability to edit employees from the
-frontend.
+The extra features added to this project were:
+
+- The ability to update employees instances.
+- The normalization of the `department` field into a new table.
+- The API tests (`api/tests/`).
+- The code style test.
+
 
 For questions email me at `joabe.mdl@gmail.com`.
