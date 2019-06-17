@@ -25,7 +25,7 @@ SECRET_KEY = 'p(xy-cg_e2=p94rxp7kjkx*wy3rc$@#(zqx3x_-5n*e-a&o+$2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'luizalabs-employe-manager.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'luizalabs-manager.herokuapp.com']
 
 # Application definition
 
