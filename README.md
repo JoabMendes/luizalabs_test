@@ -50,7 +50,7 @@ npm run build
 # Working on the project python environment, run the django server
 ./run_django_dev.sh
 
-# In another terminal windown run the npm hot reloader serve
+# In another terminal windown run the npm hot reloader server
 ./run_npm_dev.sh
 
 # This command  will open the browser automatically on localhost:8080, but

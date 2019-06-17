@@ -37,25 +37,32 @@ class EmployeeAPIView(APIView):
                 'offset': 0, # Default 0
                 'employees_per_page': 10, # Deafult 10
             }
+            Also returns a specific employee if id is specified
+            GET /api/v1/employee/<id>
         """
 
         # Pagination controls
-        offset = 0
-        employees_per_page = 10
-        if 'offset' in request.GET:
-            offset = int(request.GET['offset'])
-        if 'employees_per_page' in request.GET:
-            employees_per_page = int(request.GET['employees_per_page'])
+        if id:
+            employee = self.get_employee(pk=id)
+            serializer = EmployeeSerializer(employee)
+            return Response(serializer.data)
+        else:
+            offset = 0
+            employees_per_page = 10
+            if 'offset' in request.GET:
+                offset = int(request.GET['offset'])
+            if 'employees_per_page' in request.GET:
+                employees_per_page = int(request.GET['employees_per_page'])
 
-        # Get objects queryset
-        employees = Employee.objects.all()
+            # Get objects queryset
+            employees = Employee.objects.all().order_by('name')
 
-        if 'pagination' in request.GET:
-            # If pagination is active, let's slice the queryset
-            employees = employees[offset:(offset + employees_per_page)]
+            if 'pagination' in request.GET:
+                # If pagination is active, let's slice the queryset
+                employees = employees[offset:(offset + employees_per_page)]
 
-        serializer = EmployeeSerializer(employees, many=True)
-        return Response(serializer.data)
+            serializer = EmployeeSerializer(employees, many=True)
+            return Response(serializer.data)
 
     def post(self, request, id, format=None):
         """" POST /api/v1/employee

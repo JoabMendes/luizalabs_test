@@ -22,6 +22,21 @@ class TestEmployeeAPI(TestCase):
 
         self.client = APIClient()
 
+    def test_get_employee(self):
+        employee = Employee.objects.first()
+        endpoint = '/api/v1/employee/'
+        endpoint += str(employee.id)
+        response = self.client.get(endpoint)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        response_dict = response.json()
+        self.assertEqual(employee.id, response_dict['id'])
+        self.assertEqual(employee.name, response_dict['name'])
+        self.assertEqual(employee.email, response_dict['email'])
+        self.assertEqual(
+            employee.department.id,
+            response_dict['department']['id']
+        )
+
     def test_get_employees(self):
         endpoint = '/api/v1/employee'
         response = self.client.get(endpoint)

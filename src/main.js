@@ -16,7 +16,8 @@ Vue.component('multiselect', Multiselect);
 // Views
 import App from './App.vue';
 import Index from './components/Index.vue';
-import Page from './components/Page.vue';
+import New from './components/New.vue';
+import Update from './components/Update';
 
 const router = new Router({
   routes: [
@@ -26,9 +27,15 @@ const router = new Router({
       component: Index,
     },
     {
-      path: '/page',
-      name: 'page',
-      component: Page,
+      path: '/employee/new',
+      name: 'new',
+      component: New,
+    },
+    {
+      path: '/employee/:id',
+      name: 'update',
+      component: Update,
+      props: true
     },
   ]
 });

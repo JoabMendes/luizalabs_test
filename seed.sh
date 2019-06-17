@@ -15,6 +15,9 @@ yes | python3 manage.py migrate
 
 FIX_LOC='seeds/'
 
+python3 manage.py loaddata "$FIX_LOC"department
+python3 manage.py loaddata "$FIX_LOC"employee
+
 echo "Cleanning pyc"
 find . -name "*.pyc" -exec rm -rf {} \;
 
