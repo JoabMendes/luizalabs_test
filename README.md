@@ -1,4 +1,4 @@
-# Luizalabs Employer Manager (Django Coding Test)
+# Luizalabs Employee Manager (Django Coding Test)
 
 [![Build Status](https://travis-ci.com/JoabMendes/luizalabs_test.svg?token=YiXFcShY3q5wCAWymCUr&branch=master)](https://travis-ci.com/JoabMendes/luizalabs_test)
 
