@@ -228,7 +228,7 @@ Retrieves an employee by its id
 - **endpoint:** `/api/v1/employee/<id>`
 - **method:** `GET`
 - **params:** By URL
-**200 Response:**
+- **200 Response:**
 ```json
 {
     "department": {
@@ -240,7 +240,7 @@ Retrieves an employee by its id
     "name": "Arnaldo Pereira"
 }
 ```
-**400 Response**
+- **400 Response**
 ```json
 {"employee": ["Invalid pk \"10\" - object does not exist."]}
 ```
@@ -262,7 +262,7 @@ Creates a new employee instance based on the specified payload
 As the department field is a fk, you need to specify the department
 id when creating an employee.
 
-**201 Response:**
+- **201 Response:**
 ```json
 {
     "department": {
@@ -274,7 +274,7 @@ id when creating an employee.
     "name": "Arnaldo Pereira"
 }
 ```
-**400 Responses**
+- **400 Responses**
 ```py
 {"department": ["Invalid pk \"10\" - object does not exist."]}
 {"name": ["This field is required"]}
@@ -300,7 +300,7 @@ Updates an employee instanced based on the specified payload
 As the department field is a fk, you need to specify the department
 id when updating an employee.
 
-**200 Response:**
+- **200 Response:**
 ```json
 {
     "department": {
@@ -312,7 +312,7 @@ id when updating an employee.
     "name": "Arnaldo Pereira Jr"
 }
 ```
-**400 Responses**
+- **400 Responses**
 ```py
 {"department": ["Invalid pk \"10\" - object does not exist."]}
 {"name": ["This field is required"]}
@@ -327,11 +327,11 @@ id when updating an employee.
 - **method:** `DELETE`
 - **params:** `None`
 
-**204 Response**
+- **204 Response**
 
 ```No response body```
 
-**400 Responses**
+- **400 Responses**
 ```py
 {"employee": ["Invalid pk \"10\" - object does not exist."]}
 ```
