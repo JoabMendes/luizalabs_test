@@ -1,7 +1,6 @@
 # Luizalabs Employee Manager (Django Coding Test)
 
 [![Build Status](https://travis-ci.com/JoabMendes/luizalabs_test.svg?token=YiXFcShY3q5wCAWymCUr&branch=master)](https://travis-ci.com/JoabMendes/luizalabs_test)
-[![badge](https://heroku-badge.herokuapp.com/?app=luizalabs-manager)](https://luizalabs-manager.herokuapp.com/)
 
 ## Index
 
