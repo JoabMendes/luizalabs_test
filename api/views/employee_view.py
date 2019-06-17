@@ -57,7 +57,7 @@ class EmployeeAPIView(APIView):
             # Get objects queryset
             employees = Employee.objects.all().order_by('name')
 
-            if 'pagination' in request.GET:
+            if 'pagination' in request.GET and bool(request.GET['pagination']):
                 # If pagination is active, let's slice the queryset
                 employees = employees[offset:(offset + employees_per_page)]
 
