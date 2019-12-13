@@ -16,7 +16,7 @@
     "axios": "^0.18.0",
     "bootstrap-vue": "^2.0.0-rc.11",
     "jquery": "^3.3.1",
-    "npm": "^6.4.1",
+    "npm": "^6.13.4",
     "sweetalert": "^2.1.0",
     "vue": "^2.5.11",
     "vue-multiselect": "^2.1.4",
