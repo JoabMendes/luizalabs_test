@@ -5,7 +5,7 @@ Django==2.1.8
 django-filter==2.0.0
 django-suit==0.2.26
 django-webpack-loader==0.6.0
-djangorestframework==3.8.2
+djangorestframework==3.11.2
 flake8==3.5.0
 gunicorn==19.9.0
 idna==2.7
